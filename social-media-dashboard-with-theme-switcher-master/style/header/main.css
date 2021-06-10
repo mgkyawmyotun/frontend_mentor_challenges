@@ -1,0 +1,27 @@
+@import url(./slogan.css);
+@import url(./toogle_button.css);
+@import url(./dlmode.css);
+
+header nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 0 2em 0;
+}
+
+@media (min-width:376px) {
+  header nav {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: flex-end;
+  }
+
+  .slogan {
+    justify-self: flex-start;
+  }
+
+  .slogan::after {
+    display: none;
+  }
+
+  .dlmode {}
+}

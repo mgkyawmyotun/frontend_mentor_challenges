@@ -1,0 +1,110 @@
+@import url(./font.css);
+@import url(./utils.css);
+@import url(./main/main.css);
+@import url(./header/main.css);
+@import url(./media_quries.css);
+
+body {
+  box-sizing: border-box;
+  /** Font **/
+  --font-size: 1rem;
+  --font-family: 'Inter', sans-serif;
+
+
+  /** Primary Color **/
+
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook-color: hsl(208, 92%, 53%);
+  --twitter-color: hsl(203, 89%, 53%);
+  --instargram-color: linear-gradient(90deg, rgba(253, 196, 104, 1) 0%, rgba(223, 73, 150, 1) 60%);
+  --youtube-color: hsl(348, 97%, 39%);
+
+  /* Light Theme */
+
+  --toggle-light: hsl(230, 22%, 74%);
+  --light-grayish-blue: hsl(227, 47%, 96%);
+  --light-bg-color: hsl(0, 0%, 100%);
+  --light-bg-pattern: hsl(225, 100%, 98%);
+  --light-dark-blue: hsl(230, 17%, 14%);
+  --graysih-blue-color: hsl(228, 12%, 44%);
+
+  /** Dark Theme **/
+  --toggle-dark: linear-gradient(90deg, rgba(55, 143, 230, 1) 0%, rgba(62, 218, 130, 1) 60%);
+  --dark-bg-color: hsl(230, 17%, 14%);
+  --dark-bg-pattern: hsl(232, 19%, 15%);
+  --dark-card-color: hsl(228, 28%, 20%);
+  --dark-text-white-color: hsl(0, 0%, 100%);
+  --dark-text-blue-color: hsl(228, 34%, 66%);
+
+  /* Light Theme */
+  --toggle-color: var(--toggle-light);
+  --card-bg: var(--light-grayish-blue);
+  --bg-color: var(--light-bg-color);
+  --bg-pattern: var(--light-bg-pattern);
+  --text-primary: var(--light-dark-blue);
+  --text-secondary: var(--graysih-blue-color);
+  --toogle-ball-color: var(--light-bg-color);
+
+}
+
+body.dark_theme {
+  /** Dark Theme **/
+  --toogle-ball-color: var(--dark-bg-pattern);
+  --toggle-color: var(--toggle-dark);
+  --card-bg: var(--dark-card-color);
+  --bg-color: var(--dark-bg-color);
+  --bg-pattern: var(--dark-bg-pattern);
+  --text-primary: var(--dark-text-white-color);
+  --text-secondary: var(--dark-text-blue-color);
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  width: 100vw;
+  height: 100%;
+  padding: 2em 2em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  background-color: var(--bg-color);
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  background-color: var(--bg-pattern);
+  position: absolute;
+  height: 40%;
+}
+
+.attribution {
+  color: var(--text-primary);
+}
+
+@media (min-width:376px) {
+  body {
+    box-sizing: border-box;
+    padding: 4em 4em;
+    overflow-x: hidden;
+  }
+}

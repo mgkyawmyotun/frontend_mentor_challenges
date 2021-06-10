@@ -1,0 +1,42 @@
+@import url(./utils.css);
+
+.social_details_card {
+  width: 100%;
+  display: grid;
+  font-size: 1rem;
+
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1em 1em;
+  background-color: var(--card-bg);
+  border-radius: 0.5em;
+  gap: 1em;
+  justify-items: end;
+
+}
+
+.social_details_card__title {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.social_details_card__count {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+
+
+.social_details_card>div:nth-child(1),
+.social_details_card>div:nth-child(3) {
+  justify-self: start;
+}
+
+.social_details_card>* {
+
+  align-self: center;
+
+
+}

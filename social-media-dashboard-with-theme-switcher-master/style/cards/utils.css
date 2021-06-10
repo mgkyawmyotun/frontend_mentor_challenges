@@ -1,0 +1,34 @@
+.social_card__today_count {
+  position: relative;
+  margin: 1em;
+  font-weight: 700;
+}
+
+.up-icon {
+  color: var(--lime-green);
+
+}
+
+.down-icon {
+  color: var(--bright-red);
+}
+
+.social_card__today_count::before {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 40%;
+  left: -1em;
+  width: 30%;
+  height: 30%;
+
+}
+
+.up-icon::before {
+  background-image: url(/images/icon-up.svg);
+}
+
+.down-icon::before {
+  background-image: url(/images/icon-down.svg);
+}

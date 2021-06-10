@@ -1,0 +1,45 @@
+.dl_mode__button>input[type=checkbox] {
+  height: 0;
+  width: 0;
+  margin: 0.2em;
+  visibility: hidden;
+}
+
+.dl_mode__button>label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 3.5em;
+  height: 2em;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  background: var(--toggle-color);
+}
+
+.dl_mode__button>label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform-origin: center;
+  transform: translateY(-50%);
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--toogle-ball-color);
+  border-radius: 50%;
+  transition-property: left;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
+}
+
+
+.dl_mode__button>input:checked+label {
+  background: var(--toggle-color);
+}
+
+
+.dl_mode__button>input:checked+label::after {
+  right: calc(100% - 1.5em - 5%);
+}
+
+.dl_mode__button>label:active::after {}

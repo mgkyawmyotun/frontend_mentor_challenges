@@ -1,0 +1,32 @@
+.slogan {
+  position: relative;
+  margin: 0.5em 0;
+}
+
+.slogan>h1 {
+
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+
+}
+
+.slogan>h3 {
+  margin: 0.5em 0 1em 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.slogan>* {
+  padding: 0 0.2em;
+}
+
+.slogan::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--text-secondary);
+  opacity: 0.8;
+}

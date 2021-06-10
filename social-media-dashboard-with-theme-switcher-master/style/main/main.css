@@ -1,0 +1,24 @@
+@import url(../cards/social_card.css);
+@import url(../cards/social_details_card.css);
+
+main {
+  display: grid;
+  grid-template-columns: subgrid;
+  gap: 1em;
+}
+
+main>h1 {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+}
+
+@media (min-width:376px) {
+  main {
+    grid-template-columns: repeat(4, minmax(max-content, 1fr));
+  }
+
+  main>h1 {
+    grid-column: 4 span;
+
+  }
+}

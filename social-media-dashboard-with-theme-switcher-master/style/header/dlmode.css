@@ -1,0 +1,12 @@
+.dl_mode {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.dl_mode>h3 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.dl_mode__button {}

@@ -1,0 +1,51 @@
+@import url(./utils.css);
+
+.social_card {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.fb-border {
+  border-top: 0.4em solid var(--facebook-color);
+
+}
+
+.tw-border {
+  border-top: 0.4em solid var(--twitter-color);
+}
+
+.in-border::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.4em;
+  background: var(--instargram-color);
+  border-radius: 0.5em 0.5em 0 0;
+  top: 0;
+}
+
+.yt-border {
+  border-top: 0.4em solid var(--youtube-color);
+}
+
+.social_card__media>p {
+  color: var(--text-secondary);
+  font-weight: 700;
+  padding-left: 0.5em;
+
+}
+
+.social_card__followers h1 {
+  font-size: 4rem;
+  color: var(--text-primary);
+}
+
+.social_card__followers h3 {
+  color: var(--text-secondary);
+  letter-spacing: 0.4em;
+}

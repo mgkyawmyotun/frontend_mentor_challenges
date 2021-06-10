@@ -1,87 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  Social Media Dashboard
-  Total Followers: 23,004
-
-  Dark Mode
-
-  
-
-  @nathanf
-  1987
-  Followers
-  12 Today
-
-  @nathanf
-  1044
-  Followers
-  99 Today
-
-  @realnathanf
-  11k
-  Followers
-  1099 Today
-
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
-
-
-
-  Overview - Today
-
-  Page Views
-  87
-  3%
-
-  Likes
-  52
-  2%
-
-  Likes
-  5462
-  2257%
-
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <style>
+      @import url(./style/main.css);
+    </style>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="slogan">
+          <h1>Social Media Dashboard</h1>
+          <h3>Total Followers: 23,004</h3>
+        </div>
+        <div class="dl_mode center-hor">
+          <h3>Dark Mode</h3>
+          <div class="dl_mode__button center-hor">
+            <input type="checkbox" id="switch" /><label for="switch"
+              >Toggle</label
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="social_card fb-border">
+        <div class="social_card__media center-hor">
+          <img src="images/icon-facebook.svg" alt="" />
+          <p>@nathanf</p>
+        </div>
+        <div class="social_card__followers center-ver">
+          <h1>1987</h1>
+          <h3>Followers</h3>
+        </div>
+        <div class="social_card__today_count up-icon">12 Today</div>
+      </div>
+      <div class="social_card tw-border">
+        <div class="social_card__media center-hor">
+          <img src="images/icon-twitter.svg" alt="" />
+          <p>@nathanf</p>
+        </div>
+        <div class="social_card__followers center-ver">
+          <h1>1044</h1>
+          <h3>Followers</h3>
+        </div>
+        <div class="social_card__today_count up-icon">99 Today</div>
+      </div>
+      <div class="social_card in-border">
+        <div class="social_card__media center-hor">
+          <img src="images/icon-instagram.svg" alt="" />
+          <p>@nathanf</p>
+        </div>
+        <div class="social_card__followers center-ver">
+          <h1>11k</h1>
+          <h3>Followers</h3>
+        </div>
+        <div class="social_card__today_count up-icon">1099 Today</div>
+      </div>
+      <div class="social_card yt-border">
+        <div class="social_card__media center-hor">
+          <img src="images/icon-youtube.svg" alt="" />
+          <p>@nathanf</p>
+        </div>
+        <div class="social_card__followers center-ver">
+          <h1>8239</h1>
+          <h3>Followers</h3>
+        </div>
+        <div class="social_card__today_count down-icon">144 Today</div>
+      </div>
+      <h1>Overview - Today</h1>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Page Views</div>
+        <img class="social_details_card__media" src="/images/icon-facebook.svg"></img>
+        <div class="social_details_card__count">87</div>
+        <div class="social_card__today_count up-icon rm-margin">3%</div>
+      </div>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Likes</div>
+        <img class="social_details_card__media" src="/images/icon-facebook.svg"></img>
+        <div class="social_details_card__count">52</div>
+        <div class="social_card__today_count down-icon rm-margin">2%</div>
+      </div>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Likes</div>
+        <img class="social_details_card__media" src="/images/icon-instagram.svg"></img>
+        <div class="social_details_card__count">5462</div>
+        <div class="social_card__today_count up-icon rm-margin">2257%</div>
+      </div>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Profile Views</div>
+        <img class="social_details_card__media" src="/images/icon-instagram.svg"></img>
+        <div class="social_details_card__count">52k</div>
+        <div class="social_card__today_count up-icon rm-margin">1357%</div>
+      </div>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Retweets</div>
+        <img class="social_details_card__media" src="/images/icon-twitter.svg"></img>
+        <div class="social_details_card__count">117</div>
+        <div class="social_card__today_count up-icon rm-margin">303%</div>
+      </div>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Likes</div>
+        <img class="social_details_card__media" src="/images/icon-twitter.svg"></img>
+        <div class="social_details_card__count">507</div>
+        <div class="social_card__today_count up-icon rm-margin">553%</div>
+      </div>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Likes</div>
+        <img class="social_details_card__media" src="/images/icon-youtube.svg"></img>
+        <div class="social_details_card__count">107</div>
+        <div class="social_card__today_count down-icon rm-margin">19%</div>
+      </div>
+      <div class="social_details_card">
+        <div class="social_details_card__title">Total Views</div>
+        <img class="social_details_card__media" src="/images/icon-youtube.svg"></img>
+        <div class="social_details_card__count">1407</div>
+        <div class="social_card__today_count down-icon rm-margin">12%</div>
+      </div>
+    </main>
+    <div class="attribution"> Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Kyaw Myo Tun</a>.
+    </div>
+  </body>
+    <script src="./js/index.js" ></script>
 </html>
