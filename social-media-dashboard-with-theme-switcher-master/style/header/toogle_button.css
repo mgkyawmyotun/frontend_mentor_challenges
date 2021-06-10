@@ -41,5 +41,3 @@
 .dl_mode__button>input:checked+label::after {
   right: calc(100% - 1.5em - 5%);
 }
-
-.dl_mode__button>label:active::after {}
