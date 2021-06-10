@@ -12,7 +12,12 @@
   border-radius: 0.5em;
   gap: 1em;
   justify-items: end;
+  cursor: pointer;
 
+}
+
+.social_details_card:hover {
+  background-color: var(--card-hover-color);
 }
 
 .social_details_card__title {

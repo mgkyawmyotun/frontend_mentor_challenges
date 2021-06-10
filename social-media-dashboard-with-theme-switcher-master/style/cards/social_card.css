@@ -2,12 +2,19 @@
 
 .social_card {
   position: relative;
+  cursor: pointer;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   background-color: var(--card-bg);
   padding: 1em;
   border-radius: 0.5em;
+
+}
+
+.social_card:hover {
+
+  background-color: var(--card-hover-color);
 }
 
 .fb-border {
