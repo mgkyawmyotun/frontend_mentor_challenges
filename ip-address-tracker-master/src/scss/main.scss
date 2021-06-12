@@ -1,0 +1,16 @@
+@use 'colors';
+@use 'font';
+body {
+  font-size: 28px;
+  background-color: colors.$dark-gray;
+  font-family: font.$font-stack;
+}
+
+*,
+::before,
+::after,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
