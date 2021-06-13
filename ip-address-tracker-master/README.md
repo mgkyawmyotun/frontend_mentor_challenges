@@ -34,7 +34,6 @@ Users should be able to:
 - Mobile
 ![Mobile Page](./screenshots/mobile.png)
 
-![Active Search State](./screenshots/active.png)
 
 
 ### Links
