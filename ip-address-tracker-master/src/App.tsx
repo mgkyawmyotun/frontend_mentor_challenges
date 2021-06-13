@@ -1,18 +1,14 @@
-import mapBox from 'mapbox-gl';
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from './components/Card';
 import { SearchBar } from './components/SearchBar';
-import type { ResultType } from './type';
-import { ipGeoLookUp } from './utils';
+import type { LngLatType, ResultType } from './type';
+import { ipGeoLookUp, markAndFlyToLocation, setUpMap } from './utils';
 interface AppProps {}
 function App({}: AppProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
   const [result, setResult] = useState<ResultType | null>(null);
-  const [LngLat, setLngLat] = useState<{ lng: number; lat: number } | null>(
-    null,
-  );
+  const [LngLat, setLngLat] = useState<LngLatType>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   const search = async () => {
@@ -33,26 +29,12 @@ function App({}: AppProps) {
   };
 
   useEffect(() => {
-    mapBox.accessToken =
-      'pk.eyJ1Ijoia3lhd215b3R1biIsImEiOiJjazV1aWs1ZDUwdGdhM2pwM3RpbXhkdXJ4In0.WFtL4jwTC6eRB2A-dRk99A';
-    const map = new mapBox.Map({
-      container: mapRef.current as any,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      zoom: 1,
-    });
+    const map = setUpMap(mapRef);
+    // check if no location search , search the user own location
     if (!LngLat) {
       search();
     }
-    if (LngLat?.lat && LngLat.lat) {
-      new mapBox.Marker({ color: '#000' })
-        .setLngLat([LngLat?.lng, LngLat?.lat])
-        .addTo(map);
-      map.flyTo({
-        center: [LngLat.lng, LngLat.lat],
-        zoom: 10,
-        essential: true,
-      });
-    }
+    markAndFlyToLocation(LngLat, map);
   }, [LngLat]);
   return (
     <div className={loading ? 'loading' : ''}>

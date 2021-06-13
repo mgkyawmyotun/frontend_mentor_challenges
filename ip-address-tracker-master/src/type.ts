@@ -9,4 +9,8 @@ type ResultType = {
   location: string;
 };
 
-export { SearchType, ResultType };
+type LngLatType = {
+  lng: number;
+  lat: number;
+} | null;
+export { SearchType, ResultType, LngLatType };
