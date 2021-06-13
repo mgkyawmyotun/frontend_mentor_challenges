@@ -1,8 +1,8 @@
 @use 'colors';
 @use 'font';
 body {
-  font-size: 28px;
-  background-color: colors.$dark-gray;
+  width: 100vw;
+  height: 100vh;
   font-family: font.$font-stack;
 }
 
@@ -13,4 +13,194 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+.loading::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: colors.$dark-gray;
+  opacity: 0.8;
+}
+
+.loading::after {
+  z-index: 10;
+  position: absolute;
+  content: ' ';
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: rgb(0, 0, 0) transparent rgb(255, 255, 255) transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+h1 {
+  margin: 0;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding: 1.875em 0;
+  z-index: 1;
+  .main__title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+  }
+  .main__search_bar {
+    display: flex;
+    margin: 1.875em auto;
+    width: 80%;
+    align-items: center;
+    border-radius: 10%;
+    overflow: hidden;
+
+    & > input {
+      border: none;
+      font-size: 1rem;
+      padding: 1.25em 1.5em 1.25em 1.5em;
+      flex: 1 1 4em;
+      font-weight: 500;
+      border-radius: 1em 0 0 1em;
+      cursor: pointer;
+    }
+    & > input::placeholder {
+      font-size: 0.8rem;
+    }
+    & > button {
+      cursor: pointer;
+      border: none;
+      flex: 0 0 4em;
+      border-radius: 0 1em 1em 0;
+      align-self: stretch;
+      background-color: #000;
+      position: relative;
+    }
+    & > button::after {
+      position: absolute;
+      background-image: url(../../images/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      width: 30%;
+      height: 30%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .main__map {
+    z-index: -1;
+    position: absolute !important;
+    top: 30%;
+    left: 0;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 70%;
+  }
+  .main__card {
+    margin: 1em auto;
+    width: 80%;
+    z-index: 1;
+    border-radius: 0.5em;
+    padding: 1em;
+    box-sizing: border-box;
+    font-weight: 500;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    align-items: center;
+    & > *[class^='main__card__'] {
+      color: white;
+      text-align: center;
+      & > div:first-child {
+        font-size: 0.8em;
+        color: colors.$dark-gray;
+        font-weight: 700;
+      }
+      & > div:last-child {
+        font-size: 1.5em;
+        color: #000;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.main::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  background: url('../../images/pattern-bg.png');
+  background-size: cover;
+  width: 100%;
+  height: 30%;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .main {
+    & > .main__card {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(auto-fit, 1fr);
+      padding: 1em;
+      justify-items: stretch;
+      & > *[class^='main__card__'] {
+        padding: 1em 1em;
+        position: relative;
+        text-align: start;
+        & > div:first-child {
+          margin: 0.5em 0;
+        }
+        & > div:last-child {
+          margin-left: 0.2em;
+        }
+        &:not(div:last-child):after {
+          content: '';
+          position: absolute;
+          background-color: colors.$dark-gray;
+          opacity: 0.5;
+          width: 0.05em;
+          height: 60%;
+          top: 20%;
+          right: 0;
+        }
+      }
+    }
+
+    & > .main__search_bar {
+      width: 35%;
+      & > input {
+        font-size: 1.2rem;
+        font-weight: 700;
+        &::placeholder {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
