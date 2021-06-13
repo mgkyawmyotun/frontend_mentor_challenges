@@ -40,10 +40,10 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/mgkyawmyotun/frontend_mentor_challenges/tree/master/ip-address-tracker-master)
-- Live Site URL: [Add live site URL here]()
+- Live Site URL: [Add live site URL here](domaintracker.netlify.app)
 
 ## My process
-- 
+- built site and upload to netlify
 
 ### Built with
 
@@ -55,5 +55,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - TypeScript
 - mapbox-gl
+- snowpack
+- netlify
 ### What I learned
 I learned sass and others more about making responsive 
