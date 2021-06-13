@@ -33,9 +33,6 @@ Users should be able to:
 ![Desktop Page](./screenshots/desktop.png)
 - Mobile
 ![Mobile Page](./screenshots/mobile.png)
-
-
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/mgkyawmyotun/frontend_mentor_challenges/tree/master/ip-address-tracker-master)
