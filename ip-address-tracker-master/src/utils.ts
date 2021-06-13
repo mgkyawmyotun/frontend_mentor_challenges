@@ -36,9 +36,9 @@ export const setUpMap = (mapRef: RefObject<HTMLDivElement>) => {
 };
 
 export const markAndFlyToLocation = (LngLat: LngLatType, map: mapBox.Map) => {
-  if (LngLat?.lat && LngLat.lat) {
+  if (LngLat && LngLat.lat && LngLat.lat) {
     new mapBox.Marker({ color: '#000' })
-      .setLngLat([LngLat?.lng, LngLat?.lat])
+      .setLngLat([LngLat.lng, LngLat.lat])
       .addTo(map);
     map.flyTo({
       center: [LngLat.lng, LngLat.lat],

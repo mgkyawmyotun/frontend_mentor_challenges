@@ -13,19 +13,16 @@ function App({}: AppProps) {
 
   const search = async () => {
     setLoading((value) => true);
-    const {
-      ip,
-      isp,
-      location: { country, city, lat, lng, timezone },
-    }: any = await ipGeoLookUp(inputRef?.current?.value + '');
-    setResult({
-      ip,
-      isp,
-      location: country + ' , ' + city,
-      timezone,
-    });
-    setLngLat({ lng, lat });
-    setLoading((value) => false);
+    if (inputRef && inputRef.current) {
+      const {
+        ip,
+        isp,
+        location: { country, city, lat, lng, timezone },
+      }: any = await ipGeoLookUp(inputRef.current.value + '');
+      setResult({ ip, isp, location: country + ' , ' + city, timezone });
+      setLngLat({ lng, lat });
+      setLoading((value) => false);
+    }
   };
 
   useEffect(() => {
