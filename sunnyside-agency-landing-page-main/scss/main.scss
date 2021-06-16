@@ -122,6 +122,7 @@ body {
   .small-card {
     text-align: left !important;
     align-items: flex-start;
+    padding: 10% 20%;
   }
   .small-card > div[class*='yellow'] {
     grid-area: small_card_yellow;
