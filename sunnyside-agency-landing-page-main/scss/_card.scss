@@ -1,0 +1,101 @@
+@use 'font';
+@use 'variables' as *;
+@use 'utils' as ut;
+
+@mixin card_header_text($color) {
+  font-family: font.$font-family-fraunces;
+  color: #{$color};
+  font-size: 1.5rem;
+  padding: 1em;
+  font-weight: 900;
+}
+
+@mixin card-small-text($color) {
+  font-family: font.$font-family-barlow;
+  color: #{$color};
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.small-card {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2em;
+  text-align: center;
+
+  & > *:first-child {
+    @include card_header_text($very-dark-desaturated-blue);
+  }
+  & > *:nth-child(2) {
+    @include card-small-text($dark-grayish-blue);
+  }
+  & > *:last-child {
+    font-family: font.$font-family-fraunces;
+    color: $very-dark-desaturated-blue;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-top: 2em;
+  }
+  & > .box-shadow-text-pink {
+    @include ut.box-shadow-text(rgb(223, 176, 76));
+  }
+  & > .box-shadow-text-yellow {
+    @include ut.box-shadow-text(rgb(248, 250, 112));
+  }
+}
+
+.big-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 4em 1em;
+  & > *:first-child {
+    @include card_header_text($dark-d-text);
+  }
+  & > *:last-child {
+    @include card-small-text($dark-d-text);
+  }
+}
+.big-card[class*='bg-orange'] {
+  @include ut.setBackGroundImage(80vh, 'image-photography');
+}
+.big-card[class*='bg-apple'] {
+  @include ut.setBackGroundImage(80vh, 'image-graphic-design');
+}
+
+.card-review {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 40vh;
+  padding: 0 1em;
+  text-align: center;
+
+  & > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  & > div:first-of-type {
+    @include card-small-text($dark-grayish-blue);
+  }
+  & > div:last-of-type {
+    line-height: 1.8;
+    & > *:first-child {
+      font-family: font.$font-family-fraunces;
+      font-weight: 900;
+    }
+    & > *:last-child {
+      font-family: font.$font-family-barlow;
+      font-size: 0.8rem;
+      color: $dark-grayish-blue;
+    }
+  }
+}

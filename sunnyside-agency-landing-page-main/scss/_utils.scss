@@ -1,0 +1,18 @@
+@mixin small-image($image-name) {
+  @include setBackGroundImage(40vh, #{$image-name});
+}
+@mixin box-shadow-text($color) {
+  box-shadow: inset 0 -0.5em 0 #{$color};
+}
+
+@mixin setBackGroundImage($height, $name) {
+  background-image: url(/images/mobile/#{$name}.jpg);
+  height: #{$height};
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media only screen and (min-width: 376px) {
+    background-image: url(/images/desktop/#{$name}.jpg);
+  }
+}

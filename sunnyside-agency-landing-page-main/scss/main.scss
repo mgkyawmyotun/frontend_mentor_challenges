@@ -1,0 +1,100 @@
+@use 'variables' as *;
+@use 'font';
+@use 'utils';
+@import 'convention';
+@import 'card';
+
+.body {
+  width: 100vh;
+}
+.main__content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.main__content__first {
+  text-align: center;
+  position: relative;
+  @include utils.setBackGroundImage(80vh, 'image-header');
+
+  @import 'nav';
+  & > h1:last-child {
+    margin-top: 2em;
+    font-family: font.$font-family-fraunces;
+    color: $white;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  &::after {
+    content: '';
+    background-image: url(/images/icon-arrow-down.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 114px;
+  }
+}
+
+.image-egg {
+  @include utils.small-image('image-transform');
+}
+.image-glass {
+  @include utils.small-image('image-stand-out');
+}
+
+.client_section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  & > h1 {
+    font-family: font.$font-family-fraunces;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: $dark-grayish-blue;
+    font-weight: 900;
+    padding: 4em 0;
+  }
+}
+
+.image_section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 25vh);
+}
+
+.footer {
+  background-color: $dark-m-cyan-footer;
+  height: 50vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1em;
+  & > h1 {
+    font-size: 2rem;
+    font-family: font.$font-family-fraunces;
+    font-weight: 900;
+    color: $dark-d-text;
+  }
+  & > div:first-of-type {
+    color: $dark-d-text;
+    font-family: font.$font-family-barlow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-self: stretch;
+  }
+  & > div:last-of-type > * {
+    color: $dark-d-text;
+    padding: 0.5em;
+    cursor: pointer;
+  }
+}
