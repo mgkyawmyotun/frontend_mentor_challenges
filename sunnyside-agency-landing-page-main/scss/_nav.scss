@@ -46,7 +46,7 @@ nav {
     margin-top: -1em;
     & > * {
       padding: 1em 1.5em;
-      border-radius: 45%;
+      border-radius: 80px 80px 80px 80px;
       cursor: pointer;
     }
     & > *:first-child {
@@ -58,7 +58,42 @@ nav {
       color: $very-dark-desaturated-blue;
     }
   }
+  .menu_list_desktop {
+    display: none;
+  }
 }
 .hidden {
   display: none !important;
+}
+
+@media screen and (min-width: 600px) {
+  nav {
+    align-items: center;
+    font-weight: bolder;
+    & > h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .menu {
+    display: none;
+  }
+  .menu_list {
+    display: none !important;
+  }
+  .hidden {
+    display: none !important;
+  }
+  .menu_list_desktop {
+    display: flex !important;
+    justify-content: space-evenly;
+    align-items: center;
+    & > * {
+      padding: 1em 1.5em;
+      border-radius: 80px 80px 80px 80px;
+      cursor: pointer;
+    }
+    & > *:hover {
+      background-color: rgba($color: #ffffff, $alpha: 0.5);
+    }
+  }
 }

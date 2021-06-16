@@ -4,12 +4,13 @@
 @import 'convention';
 @import 'card';
 
-.body {
-  width: 100vh;
+body {
+  margin: 0;
 }
 .main__content {
   display: grid;
   grid-template-columns: 1fr;
+  // overflow: hidden;
 }
 
 .main__content__first {
@@ -96,5 +97,67 @@
     color: $dark-d-text;
     padding: 0.5em;
     cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .main__content {
+    grid-template-areas:
+      'm m'
+      'small_card_yellow image_egg'
+      'image_glass small_card_pink'
+      'bg_apple bg_orange'
+      'client_section client_section'
+      'bg bg'
+      'f f';
+    grid-template-columns: 1fr 1fr;
+  }
+  .main__content__first {
+    grid-area: m;
+    // grid-column: span 1;
+  }
+  .small-card > div[class*='yellow'] {
+    grid-area: small_card_yellow;
+  }
+  .image-egg {
+    grid-area: image_egg;
+    height: 60vh;
+  }
+
+  .small-card > div[class*='pink'] {
+    grid-area: small_card_pink;
+  }
+  .image-glass {
+    grid-area: image_glass;
+    height: 60vh;
+  }
+  .bg-apple {
+    grid-area: bg_apple;
+    height: 60vh !important;
+  }
+  .bg-orange {
+    grid-area: bg_orange;
+    height: 60vh !important;
+  }
+  .client_section {
+    grid-area: client_section;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 4em 6em;
+    & > h1 {
+      flex: 1 0 100%;
+      font-size: 1.4rem;
+    }
+    & > *:not(:first-child) {
+      flex: 1 0 0;
+    }
+  }
+  .image_section {
+    grid-area: bg;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .footer {
+    grid-area: f;
   }
 }
