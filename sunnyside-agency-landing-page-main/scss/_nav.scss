@@ -92,8 +92,13 @@ nav {
       border-radius: 80px 80px 80px 80px;
       cursor: pointer;
     }
+    & > *:last-child {
+      background-color: #ffffff;
+      color: $very-dark-desaturated-blue;
+    }
     & > *:hover {
-      background-color: rgba($color: #ffffff, $alpha: 0.5);
+      background-color: rgba($color: #ffffff, $alpha: 0.2);
+      color: $white;
     }
   }
 }
